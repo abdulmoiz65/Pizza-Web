@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="min-h-screen bg-gray-100 font-sans">
+
+    <!-- Hero Section with Navigation -->
+    <div class="relative bg-cover bg-center" style="background-image: url('./images/back3.jpg');">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="relative min-h-screen flex flex-col justify-center text-center text-white p-6 md:p-12">
+            <!-- Navigation -->
+            <nav class="absolute top-6 left-1/2 transform -translate-x-1/2 flex items-center justify-between w-full max-w-screen-lg px-4">
+                <ul class="hidden sm:flex space-x-8 text-white font-semibold">
+                    <li><a href="#Reservation" class="text-lg hover:text-orange-400 transition">Reservations</a></li>
+                    <li><a href="#Menu" class="text-lg hover:text-orange-400 transition">Menu</a></li>
+                    <li><a href="#Reviews" class="text-lg hover:text-orange-400 transition">Reviews</a></li>
+                    <li><a href="#chef" class="text-lg hover:text-orange-400 transition">Chefs</a></li>
+                </ul>
+                <div class="flex items-center space-x-4">
+                    <form action="/search" method="get" class="relative hidden sm:block">
+                        <input type="text" placeholder="Search..." name="q" class="rounded-lg h-10 pl-4 placeholder-black border-4 border-orange-700 text-white focus:outline-none focus:ring-2 focus:ring-orange-500 transition">
+                    </form>
+                    <i class="fa-solid fa-heart text-white text-2xl hover:text-orange-400 cursor-pointer transition"></i>
+                    <i class="fa-solid fa-cart-shopping text-white text-2xl hover:text-orange-400 cursor-pointer transition"></i>
+                    <button class="bg-orange-500 font-medium text-white rounded-lg px-6 py-2 hover:bg-orange-600 transition-colors hidden sm:block">Log in</button>
+                    <button class="bg-orange-500 text-white font-medium rounded-lg px-6 py-2 hover:bg-orange-600 transition-colors hidden sm:block">Sign Up</button>
+                </div>
+            </nav>
+           
+            <!-- Hero Text -->
+            <div class="relative z-10 mx-4 md:mx-16">
+                <h1 class="text-4xl sm:text-5xl md:text-8xl font-extrabold leading-tight tracking-wide">
+                    Indulge in the<br>
+                    Ultimate Pizza<br>
+                    <span class="text-orange-400">Experience</span>
+                </h1>
+                <p class="mt-4 text-lg md:text-xl max-w-2xl mx-auto">
+                    From our signature Margherita to our Pepperoni special, we craft every pizza with passion, using the freshest ingredients to give you an unforgettable dining experience.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center mt-8 space-y-4 sm:space-y-0 sm:space-x-4">
+                    <div class="flex items-center bg-orange-500 rounded-lg px-6 py-2 hover:bg-orange-600 transition-colors cursor-pointer shadow-md">
+                        <i class="fa-solid fa-truck text-white mr-2"></i>
+                        <span class="text-white font-medium">Delivery</span>
+                    </div>
+                    <div class="flex items-center bg-orange-500 rounded-lg px-6 py-2 hover:bg-orange-600 transition-colors cursor-pointer shadow-md">
+                        <i class="fa-solid fa-location-dot text-white mr-2"></i>
+                        <span class="text-white font-medium">Pick Up</span>
+                    </div>
+                    <div class="flex items-center bg-orange-500 rounded-lg px-6 py-2 hover:bg-orange-600 transition-colors cursor-pointer shadow-md">
+                        <i class="fa-solid fa-utensils text-white mr-2"></i>
+                        <span class="text-white font-medium">Dine In</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Menu Section -->
+    <div id="Menu" class="py-16 bg-gray-50">
+        <div class="flex justify-center mb-12">
+            <nav class="bg-white border border-orange-800 rounded-lg shadow-lg p-6">
+                <ul class="flex flex-wrap justify-center space-x-6">
+                    <li class="flex items-center bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600 transition-colors cursor-pointer">
+                        <span>Pizzas</span>
+                    </li>
+                    <li class="text-gray-500 hover:text-orange-500 transition-colors cursor-pointer">Classic</li>
+                    <li class="text-gray-500 hover:text-orange-500 transition-colors cursor-pointer">Specialty</li>
+                    <li class="text-gray-500 hover:text-orange-500 transition-colors cursor-pointer">Vegetarian</li>
+                    <li class="text-gray-500 hover:text-orange-500 transition-colors cursor-pointer">Vegan</li>
+                    <li class="text-gray-500 hover:text-orange-500 transition-colors cursor-pointer">Gluten-Free</li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 md:px-8 lg:px-16">
+            <div class="bg-white p-6 border rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                <img src="./images/pizza.jpg" alt="Margherita Pizza" class="w-full h-40 object-cover rounded-md">
+                <h2 class="mt-4 text-2xl font-semibold">Margherita Pizza</h2>
+                <p class="text-gray-600 mt-2">Our signature Margherita pizza topped with fresh mozzarella, vine-ripened tomatoes, and basil leaves.</p>
+                <div class="flex justify-between items-center mt-4">
+                    <span class="text-orange-600 font-bold">$12.99</span>
+                    <button class="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600 transition-colors">Order Now</button>
+                </div>
+            </div>
+            <div class="bg-white p-6 border rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                <img src="./images/pizza2.jpg" alt="Pepperoni Pizza" class="w-full h-40 object-cover rounded-md">
+                <h2 class="mt-4 text-2xl font-semibold">Pepperoni Pizza</h2>
+                <p class="text-gray-600 mt-2">Classic pepperoni pizza with crispy pepperoni, mozzarella cheese, and our homemade tomato sauce.</p>
+                <div class="flex justify-between items-center mt-4">
+                    <span class="text-orange-600 font-bold">$14.99</span>
+                    <button class="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600 transition-colors">Order Now</button>
+                </div>
+            </div>
+            <div class="bg-white p-6 border rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                <img src="./images/pizza3.jpg" alt="Veggie Delight" class="w-full h-40 object-cover rounded-md">
+                <h2 class="mt-4 text-2xl font-semibold">Veggie Delight</h2>
+                <p class="text-gray-600 mt-2">A delightful mix of fresh veggies, including bell peppers, onions, olives, and mushrooms, on a bed of mozzarella cheese.</p>
+                <div class="flex justify-between items-center mt-4">
+                    <span class="text-orange-600 font-bold">$13.99</span>
+                    <button class="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600 transition-colors">Order Now</button>
+                </div>
+            </div>
+            <!-- More menu items... -->
+        </div>
+    </div>
+
+    <!-- Reviews Section -->
+    <div id="Reviews" class="py-16 bg-white">
+        <div class="max-w-screen-lg mx-auto px-4 md:px-8">
+            <h2 class="text-3xl font-semibold text-center text-gray-800 mb-8">Customer Reviews</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <div class="flex items-center">
+                        <img src="./images/testi2.jpg" alt="Customer" class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-4">
+                            <h3 class="text-lg font-semibold">John Doe</h3>
+                            <div class="flex items-center text-orange-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="mt-4 text-gray-600">"The best pizza in town! Always fresh and delicious. Highly recommend the Margherita."</p>
+                </div>
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <div class="flex items-center">
+                        <img src="./images/testi2.jpg" alt="Customer" class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-4">
+                            <h3 class="text-lg font-semibold">Jane Smith</h3>
+                            <div class="flex items-center text-orange-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="mt-4 text-gray-600">"Fantastic service and amazing pizzas. The Pepperoni pizza is a must-try!"</p>
+                </div>
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <div class="flex items-center">
+                        <img src="./images/testi.jpg" alt="Customer" class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-4">
+                            <h3 class="text-lg font-semibold">Michael Johnson</h3>
+                            <div class="flex items-center text-orange-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="mt-4 text-gray-600">"Great atmosphere and even better food. The Veggie Delight is my go-to."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chef Section -->
+    <div id="chef" class="py-16 bg-gray-50">
+        <div class="max-w-screen-lg mx-auto px-4 md:px-8">
+            <h2 class="text-3xl font-semibold text-center text-gray-800 mb-8">Our Chefs</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 border rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <img src="./images/chef1.jpg" alt="Chef" class="w-full h-40 object-cover rounded-md">
+                    <h3 class="mt-4 text-xl font-semibold">Chef Mario Rossi</h3>
+                    <p class="text-gray-600 mt-2">Head Chef and culinary genius, Chef Mario brings a wealth of experience and passion for authentic Italian cuisine.</p>
+                </div>
+                <div class="bg-white p-6 border rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <img src="./images/chef2.jpg" alt="Chef" class="w-full h-40 object-cover rounded-md">
+                    <h3 class="mt-4 text-xl font-semibold">Chef Luigi Bianchi</h3>
+                    <p class="text-gray-600 mt-2">With a keen eye for detail and a love for fresh ingredients, Chef Luigi crafts some of the best pizzas in town.</p>
+                </div>
+                <div class="bg-white p-6 border rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <img src="./images/chef4.jpg" alt="Chef" class="w-full h-40 object-cover rounded-md">
+                    <h3 class="mt-4 text-xl font-semibold">Chef Carla Esposito</h3>
+                    <p class="text-gray-600 mt-2">Specializing in vegan and gluten-free options, Chef Carla ensures that everyone can enjoy our delicious pizzas.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  <!-- Reservation Section -->
+<div id="Reservation" class="bg-black py-16">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="text-center">
+            <h1 class="text-orange-700 font-serif text-3xl md:text-4xl lg:text-5xl">Reservations</h1>
+            <h2 class="mt-4 text-2xl md:text-3xl lg:text-4xl text-yellow-100 font-serif">Booking a Table</h2>
+            <h3 class="mt-2 text-lg md:text-xl lg:text-2xl text-yellow-100">Book a Table for You and Your Family</h3>
+        </div>
+        <div class="mt-12 flex justify-center">
+            <div class="w-full max-w-lg bg-black p-6 rounded-lg shadow-lg">
+                <div class="flex flex-col space-y-6">
+                    <div class="relative border border-orange-300 rounded-md">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-4 h-4 bg-orange-300 transform rotate-45"></div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col space-y-4">
+                        <div class="border border-orange-300 p-3 rounded-md text-lg md:text-xl text-orange-300 flex items-center">
+                            <span class="flex-grow">Name</span>
+                            <i class="fa-solid fa-caret-down"></i>
+                        </div>
+                        <div class="flex flex-col sm:flex-row sm:space-x-4">
+                            <div class="w-full sm:w-1/2 border border-orange-300 p-3 rounded-md text-lg md:text-xl text-orange-300 flex items-center">
+                                <span class="flex-grow">Phone</span>
+                                <i class="fa-solid fa-caret-down"></i>
+                            </div>
+                            <div class="w-full sm:w-1/2 border border-orange-300 p-3 rounded-md text-lg md:text-xl text-orange-300 flex items-center mt-4 sm:mt-0">
+                                <span class="flex-grow">20:00</span>
+                                <i class="fa-solid fa-caret-down"></i>
+                            </div>
+                        </div>
+                        <div class="flex flex-col sm:flex-row sm:space-x-4">
+                            <div class="w-full sm:w-1/2 border border-orange-300 p-3 rounded-md text-lg md:text-xl text-orange-300 flex items-center">
+                                <span class="flex-grow">People</span>
+                                <i class="fa-solid fa-caret-down"></i>
+                            </div>
+                            <div class="w-full sm:w-1/2 border border-orange-300 p-3 rounded-md text-lg md:text-xl text-orange-300 flex items-center mt-4 sm:mt-0">
+                                <span class="flex-grow">20/4/24</span>
+                                <i class="fa-solid fa-caret-down"></i>
+                            </div>
+                        </div>
+                        <div class="border border-orange-300 p-3 rounded-md text-lg md:text-xl text-orange-300 flex items-center justify-center cursor-pointer hover:bg-orange-100 transition-colors">
+                            <span>Book now</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Contact Section -->
+    <div id="Contact" class="py-16 bg-gray-50">
+        <div class="max-w-screen-lg mx-auto px-4 md:px-8">
+            <h2 class="text-3xl font-semibold text-center text-gray-800 mb-8">Contact Us</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-700">Visit Us</h3>
+                    <p class="mt-2 text-gray-600">123 Pizza Lane, Flavor Town, USA</p>
+                    <h3 class="text-xl font-semibold text-gray-700 mt-6">Call Us</h3>
+                    <p class="mt-2 text-gray-600">+1 (123) 456-7890</p>
+                    <h3 class="text-xl font-semibold text-gray-700 mt-6">Email Us</h3>
+                    <p class="mt-2 text-gray-600">info@pizzarestaurant.com</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-700">Opening Hours</h3>
+                    <p class="mt-2 text-gray-600">Monday - Friday: 11:00 AM - 10:00 PM</p>
+                    <p class="mt-2 text-gray-600">Saturday - Sunday: 12:00 PM - 11:00 PM</p>
+                    <h3 class="text-xl font-semibold text-gray-700 mt-6">Follow Us</h3>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="#" class="text-gray-500 hover:text-orange-500 transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-orange-500 transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-orange-500 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-orange-500 transition-colors">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class=" py-6">
+       <div>
+        <h1 class=" text-center uppercase font-extrabold text-orange-400 text-4xl" >Thank You</h1>
+       </div>
+    </footer>
+
+    <script>
+      
+    </script>
+</body>
+</html>
